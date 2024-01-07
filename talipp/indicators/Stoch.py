@@ -38,6 +38,9 @@ class Stoch(Indicator):
         highs = [value.high for value in input_period if value.high is not None]
         lows = [value.low for value in input_period if value.low is not None]
 
+        if len(highs) == 0 or len(lows) == 0:
+            return None
+        
         max_high = max(highs)
         min_low = min(lows)
 
